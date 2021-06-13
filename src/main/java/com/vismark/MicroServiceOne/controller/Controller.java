@@ -1,4 +1,4 @@
-package com.vismark.controller;
+package com.vismark.MicroServiceOne.controller;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -10,13 +10,15 @@ public class Controller {
         return "hello.";
     }
 
+    // http://localhost:{port}/person/{age}?firstName=Vismark&lastName=Juarez
+    // i.e: http://localhost:8080/person/26?firstName=Vismark&lastName=Juarez
     @RequestMapping(
             method=RequestMethod.GET,
-            value="/name/{age}"
+            value="/person/{age}"
     )
     public String greetingWithDetails(@PathVariable int age,
-                                   @RequestParam String firstName,
-                                   @RequestParam String lastName){
+                                      @RequestParam String firstName,
+                                      @RequestParam String lastName){
         StringBuilder sb = new StringBuilder(firstName);
         sb.append(" ");
         sb.append(lastName);

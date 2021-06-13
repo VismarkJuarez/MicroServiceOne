@@ -1,14 +1,13 @@
-package com.vismark.demo;
+package com.vismark.MicroServiceOne;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroserviceOneApplication {
+public class MicroServiceOneApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Hello, World!");
-		SpringApplication.run(MicroserviceOneApplication.class, args);
+		SpringApplication.run(MicroServiceOneApplication.class, args);
 	}
 
 }
