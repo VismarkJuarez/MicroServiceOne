@@ -10,13 +10,13 @@ public class Controller {
         return "hello.";
     }
 
-    // http://localhost:{port}/person/{age}?firstName=Vismark&lastName=Juarez
-    // i.e: http://localhost:8080/person/26?firstName=Vismark&lastName=Juarez
+    // http://localhost:{port}/person?age=26&firstName=Vismark&lastName=Juarez
+    // i.e: http://localhost:8080/person?age=26&firstName=Vismark&lastName=Juarez
     @RequestMapping(
             method=RequestMethod.GET,
-            value="/person/{age}"
+            value="/person"
     )
-    public String greetingWithDetails(@PathVariable int age,
+    public String greetingWithDetails(@RequestParam int age,
                                       @RequestParam String firstName,
                                       @RequestParam String lastName){
         StringBuilder sb = new StringBuilder(firstName);
