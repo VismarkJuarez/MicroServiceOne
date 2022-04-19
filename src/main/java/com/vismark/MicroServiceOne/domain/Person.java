@@ -1,5 +1,7 @@
 package com.vismark.MicroServiceOne.domain;
 
+import com.google.gson.Gson;
+
 import java.util.Objects;
 
 public class Person {
@@ -53,11 +55,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+        return new Gson().toJson(this);
     }
 
 
