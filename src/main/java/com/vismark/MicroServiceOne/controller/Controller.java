@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 public class Controller {
@@ -38,9 +38,9 @@ public class Controller {
             method=RequestMethod.GET,
             value="/all"
     )
-    public ResponseEntity<List<Person>> retrieveAllPersons(){
-        List<Person> allPersons = personService.getAllPeople();
-        return new ResponseEntity<List<Person>>(allPersons, HttpStatus.OK);
+    public ResponseEntity<Set<Person>> retrieveAllPersons(){
+        Set<Person> allPersons = personService.getAllPeople();
+        return new ResponseEntity<Set<Person>>(allPersons, HttpStatus.OK);
     }
 
     @RequestMapping(
