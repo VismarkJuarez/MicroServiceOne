@@ -27,4 +27,19 @@ public class Controller {
         return sb.toString();
     }
 
+    @RequestMapping(
+            method=RequestMethod.POST,
+            value="/person"
+    )
+    public String addPerson(@RequestParam int age,
+                                      @RequestParam String firstName,
+                                      @RequestParam String lastName){
+        StringBuilder sb = new StringBuilder(firstName);
+        sb.append(" ");
+        sb.append(lastName);
+        sb.append(": ");
+        sb.append(age);
+        return sb.toString();
+    }
+
 }
