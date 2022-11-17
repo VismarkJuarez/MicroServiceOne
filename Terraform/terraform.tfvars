@@ -1,0 +1,5 @@
+EC2_NAME = "Vismark_ec2"
+
+# Personal AWS Account Credentials:
+AWS_ACCESS_KEY = "AKIAQKWYBIE6SYPDOHE2"
+AWS_SECRET_KEY = "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"
