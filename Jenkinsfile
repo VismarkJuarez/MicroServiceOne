@@ -16,9 +16,18 @@ pipeline {
                 '''
             }
         }
-        stage('Build') {
+
+        stage('Maven Clean'){
             steps {
-                echo 'Building..'
+                echo "Running mvn clean"
+                sh 'mvn clean'
+            }
+        }
+
+        stage('Maven Install') {
+            steps {
+                echo 'Running mvn install'
+                sh 'mvn install'
             }
         }
         stage('Test') {
