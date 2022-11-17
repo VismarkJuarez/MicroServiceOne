@@ -17,6 +17,15 @@ pipeline {
             }
         }
 
+        stage('Terraform init') {
+                    steps {
+                        sh '''
+                        cd Terraform
+                        terraform plan -var="AWS_ACCESS_KEY=AKIAQKWYBIE6SYPDOHE2" -var="AWS_SECRET_KEY=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"
+                        '''
+                    }
+                }
+
         stage('Outputting Environment and Tool Deetz'){
             steps {
                 sh '''
