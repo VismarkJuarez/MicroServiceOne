@@ -7,21 +7,20 @@ pipeline {
     }
 
     stages {
+        stage('Outputting Environment and Tool Deetz'){
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                    java -version
+                '''
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
             }
         }
-
-        stage('Vismark Stage'){
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-        }
-
         stage('Test') {
             steps {
                 echo 'Testing..'
