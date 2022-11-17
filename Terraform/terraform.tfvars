@@ -1,5 +1,0 @@
-EC2_NAME = "Vismark_ec2"
-
-# Personal AWS Account Credentials:
-#AWS_ACCESS_KEY = "$TERRAFORM_AWS_ACCESS_KEY"
-#AWS_SECRET_KEY = "$TERRAFORM_AWS_SECRET_KEY"
