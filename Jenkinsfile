@@ -18,11 +18,12 @@ pipeline {
         }
 
         stage('Terraform plan') {
+            environment {
+                AWS_ACCESS_KEY = credentials('TERRAFORM_AWS_ACCESS_KEY')
+                AWS_SECRET_KEY = credentials('TERRAFORM_AWS_SECRET_KEY')
+            }
             steps {
-                sh '''
-                cd Terraform
-                terraform plan -var="AWS_ACCESS_KEY=AKIAQKWYBIE6SYPDOHE2" -var="AWS_SECRET_KEY=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"
-                '''
+                sh('cd Terraform && terraform plan -var=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY -auto-approve')
             }
         }
 
@@ -30,7 +31,6 @@ pipeline {
             steps {
                 sh '''
                 cd Terraform
-                terraform apply -var="AWS_ACCESS_KEY=AKIAQKWYBIE6SYPDOHE2" -var="AWS_SECRET_KEY=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"
                 '''
             }
         }
