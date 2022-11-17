@@ -3,10 +3,18 @@ pipeline {
 
     tools {
         maven 'maven3.8.6'
+        terraform 'terraform15'
         //jdk 'jdk8'
     }
 
     stages {
+
+        stage('Terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
         stage('Outputting Environment and Tool Deetz'){
             steps {
                 sh '''
@@ -35,6 +43,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
