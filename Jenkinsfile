@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-        stage('Terraform init') {
+        stage('Terraform plan') {
                     steps {
                         sh '''
                         cd Terraform
