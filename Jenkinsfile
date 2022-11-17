@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh 'cd Terraform && ls -l'
                 sh 'cd Terraform && terraform init'
-                sh 'cd Terraform && destroy -var=AWS_ACCESS_KEY=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY -auto-approve'
+                sh 'cd Terraform && terraform destroy -var=AWS_ACCESS_KEY=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY -auto-approve'
                 sh 'ls -l'
             }
         }
