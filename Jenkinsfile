@@ -23,7 +23,11 @@ pipeline {
                 AWS_SECRET_KEY = credentials('TERRAFORM_AWS_SECRET_KEY')
             }
             steps {
-                sh('cd Terraform && terraform plan -var=AWS_ACCESS_KEY=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY')
+                //sh('cd Terraform && terraform plan -var=AWS_ACCESS_KEY=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY')
+                sh '''
+                    cd Terraform
+                    terraform plan -var=AWS_ACCESS_KEY=$AWS_ACCESS_KEY -var=AWS_SECRET_KEY=$AWS_SECRET_KEY
+                '''
             }
         }
 
@@ -31,6 +35,7 @@ pipeline {
             steps {
                 sh '''
                 cd Terraform
+
                 '''
             }
         }
