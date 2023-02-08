@@ -17,4 +17,3 @@ http://localhost:2019/person?age=26&firstName=Vismark&lastName=Juarez
 ```bash
 Vismark Juarez: 26
 ```
-
