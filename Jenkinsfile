@@ -4,7 +4,6 @@ pipeline {
     tools {
         maven 'maven3.8.6'
         terraform 'terraform15'
-        //jdk 'jdk8'
     }
 
     stages {
