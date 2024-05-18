@@ -18,7 +18,14 @@ http://localhost:2019/person?age=28&firstName=Vismark&lastName=Juarez
 Vismark Juarez: 28
 ```
 
-## Packaging the Application
+## Running Application as Dockerfile
+
+1. Run `mvn clean install` so that the jar file gets created and stored in the `/target` directory (the Dockerfile looks for it there)
+2. Run `docker build -t {name-the-image-whatever-you-want} .`
+3. Run `docker image ls` to confirm that the image was created successfully
+4. Run `docker run -p 2019:2019 {whatever-name-you-gate-the-image}`
+
+## Packaging & Deploying the Application into DockerHub
 
 To package this application, simply run the following commands in the root same directory where the `Dockerfile` is located:
 
