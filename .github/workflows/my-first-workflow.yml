@@ -71,3 +71,19 @@ jobs:
           path: |
             target
             pom.xml
+
+  download_previously_uploaded_artifact:
+    needs: upload_maven_clean_install_artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: da-maven-artifact
+      - name: Output directory and contents after downloading artifacts
+        run: |
+          pwd
+          ls -la
+          cd ..
+          pwd
+          ls -la
