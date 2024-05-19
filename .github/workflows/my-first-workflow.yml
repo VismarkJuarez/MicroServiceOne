@@ -50,3 +50,23 @@ jobs:
         run: | 
           echo "${{ toJSON(github) }}" # prints the github context, which is provided automatically, and formats the JSON
           echo " The following is the owner of the repository, as specified by the github context data: ${{ toJSON(github.repository_owner) }}" # Extracting the data value from the 'repository_owner' property
+  
+  upload_maven_clean_install_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn clean install
+      - name: Uploading Artifactssss
+        uses: actions/upload-artifact@v3
+        with:
+          name: da-maven-artifact
+          path: |
+            target
+            pom.xml
