@@ -82,8 +82,8 @@ jobs:
           name: da-maven-artifact
       - name: Output directory and contents after downloading artifacts
         run: |
-          pwd
-          ls -la
-          cd ..
-          pwd
-          ls -la
+          echo "pwd" && pwd
+          echo "ls -la" && ls -la
+          echo "cd .." && cd ..
+          echo "pwd" && pwd
+          echo "ls -la" && ls -la
