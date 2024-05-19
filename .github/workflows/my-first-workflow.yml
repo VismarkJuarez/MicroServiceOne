@@ -49,4 +49,4 @@ jobs:
       - name: Printing the Context of this GitHub Workflow
         run: | 
           echo "${{ toJSON(github) }}" # prints the github context, which is provided automatically, and formats the JSON
-          echo "${{ toJSON(github.repository_owner) }}" # Extracting the data value from the 'repository_owner' property
+          echo " The following is the owner of the repository, as specified by the github context data: ${{ toJSON(github.repository_owner) }}" # Extracting the data value from the 'repository_owner' property
