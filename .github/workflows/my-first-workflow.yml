@@ -52,6 +52,7 @@ jobs:
           echo " The following is the owner of the repository, as specified by the github context data: ${{ toJSON(github.repository_owner) }}" # Extracting the data value from the 'repository_owner' property
   
   upload_maven_clean_install_artifacts:
+    needs: [ build, print_working_directory, print_context ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
