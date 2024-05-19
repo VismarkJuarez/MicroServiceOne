@@ -41,3 +41,9 @@ jobs:
           echo "I'm about to print da working directory..."
           pwd
           echo "I just printed the working directory path to the console"
+
+  print_context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing the Context of this GitHub Workflow
+        run: echo "${{ toJSON(github) }}" # prints the github context, which is provided automatically, and formats the JSON
